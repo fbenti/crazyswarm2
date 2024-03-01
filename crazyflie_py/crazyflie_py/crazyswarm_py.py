@@ -7,9 +7,12 @@ from .crazyflie import CrazyflieServer, TimeHelper
 class Crazyswarm:
 
     def __init__(self):
-        rclpy.init()
+        try:
+            rclpy.init()
+        except Exception as e:
+            print(e)
 
         self.allcfs = CrazyflieServer()
         self.timeHelper = TimeHelper(self.allcfs)
 
-        self.input = genericJoystick.Joystick(self.timeHelper)
+        # self.input = genericJoystick.Joystick(self.timeHelper)
