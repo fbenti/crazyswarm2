@@ -11,6 +11,10 @@ def main():
     swarm = Crazyswarm()
     timeHelper = swarm.timeHelper
     cf = swarm.allcfs.crazyflies[0]
+    cf.setParam('kalman.resetEstimation', 1)
+    timeHelper.sleep(1.0)
+    cf.setParam('kalman.resetEstimation', 0)
+    timeHelper.sleep(1.0)
 
     cf.takeoff(targetHeight=1.0, duration=TAKEOFF_DURATION)
     timeHelper.sleep(TAKEOFF_DURATION + HOVER_DURATION)
