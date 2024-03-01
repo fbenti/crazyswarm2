@@ -1,8 +1,8 @@
 # named list of all robots
 robots:
   cf231:
-    enabled: true
-    uri: radio://0/80/2M/E7E7E7E7E7
+    enabled: false
+    uri: radio://0/0/2M/E7E7E7E7E7
     initial_position: [0, 0, 0]
     type: cf21  # see robot_types
     # firmware_params:
@@ -14,11 +14,11 @@ robots:
     #     topic_name3: 
     #       frequency: 1
     #       vars: ["acc.x", "acc.y"]
-  cf5:
-    enabled: false
-    uri: radio://0/80/2M/E7E7E7E705
+  cf8:
+    enabled: true
+    uri: radio://0/0/2M/E7E7E7E708
     initial_position: [0, -0.5, 0]
-    type: cf21  # see robot_types
+    type: cf_flowdeck # see robot_types
     # firmware_params:
     #   kalman:
     #     pNAcc_xy: 1.0 # default 0.5
@@ -27,8 +27,39 @@ robots:
     #    topic_name3: 
     #      frequency: 1
     #      vars: ["acc.x", "acc.y", "acc.z"]
+  cf1:
+    enabled: false
+    uri: radio://0/0/2M/E7E7E7E701
+    initial_position: [1, -0.5, 0]
+    type: cf_flowdeck # see robot_types
+  cf16:
+    enabled: false
+    uri: radio://0/0/2M/E7E7E7E710
+    initial_position: [2, -0.5, 0]
+    type: cf_flowdeck # see robot_types
+  cf20:
+    enabled: false
+    uri: radio://0/0/2M/E7E7E7E714
+    initial_position: [3, -0.5, 0]
+    type: cf_flowdeck # see robot_types
 # Definition of the various robot types
 robot_types:
+  cf_flowdeck:
+    motion_capture:
+      enabled: false
+      # only if enabled; see motion_capture.yaml
+      marker: default_single_marker
+      dynamics: default
+    big_quad: false
+    battery:
+      voltage_warning: 3.8  # V
+      voltage_critical: 3.7 # V
+    firmware_params:
+      commander:
+        enHighLevel: 1
+      stabilizer:
+        estimator: 2 # 1: complementary, 2: kalman
+        controller: 1 # 1: PID, 2: mellinger
   cf21:
     motion_capture:
       enabled: true
@@ -93,7 +124,7 @@ all:
       enHighLevel: 1
     stabilizer:
       estimator: 2 # 1: complementary, 2: kalman
-      controller: 2 # 1: PID, 2: mellinger
+      controller: 1 # 1: PID, 2: mellinger
     # ring:
     #   effect: 16 # 6: double spinner, 7: solid color, 16: packetRate
     #   solidBlue: 255 # if set to solid color
