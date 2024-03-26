@@ -13,14 +13,14 @@ def main():
     cf = swarm.allcfs.crazyflies[0]
     cf.setParam('kalman.resetEstimation', 1)
     timeHelper.sleep(1.0)
-    cf.setParam('kalman.resetEstimation', 0)
-    timeHelper.sleep(1.0)
+    # cf.setParam('kalman.resetEstimation', 0)
+    # timeHelper.sleep(1.0)
 
-    cf.takeoff(targetHeight=1.0, duration=TAKEOFF_DURATION)
-    timeHelper.sleep(TAKEOFF_DURATION + HOVER_DURATION)
-    cf.land(targetHeight=0.04, duration=2.5)
-    timeHelper.sleep(TAKEOFF_DURATION)
-
+    # cf.takeoff(targetHeight=1.0, duration=TAKEOFF_DURATION)
+    # timeHelper.sleep(TAKEOFF_DURATION + HOVER_DURATION)
+    # cf.land(targetHeight=0.04, duration=2.5)
+    # timeHelper.sleep(TAKEOFF_DURATION)
+    print("Connected..")
 
 if __name__ == '__main__':
     main()

@@ -12,7 +12,9 @@ class Crazyswarm:
         except Exception as e:
             print(e)
 
+        print("here1")
         self.allcfs = CrazyflieServer()
+        print("here2")
         self.timeHelper = TimeHelper(self.allcfs)
 
         # self.input = genericJoystick.Joystick(self.timeHelper)

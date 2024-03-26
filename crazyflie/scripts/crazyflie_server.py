@@ -108,6 +108,7 @@ class CrazyflieServer(Node):
             if robot_data[crazyflie]["enabled"]:
                 type_cf = robot_data[crazyflie]["type"]
                 # do not include virtual objects
+                self.get_logger().info(f"URI: {robot_data[crazyflie]['uri']}")
                 connection = self._ros_parameters['robot_types'][type_cf].get(
                     "connection", "crazyflie")
                 if connection == "crazyflie":

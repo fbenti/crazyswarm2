@@ -71,7 +71,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument('backend', default_value='cpp'),
         DeclareLaunchArgument('debug', default_value='False'),
-        DeclareLaunchArgument('rviz', default_value='False'),
+        DeclareLaunchArgument('rviz', default_value='True'),
         DeclareLaunchArgument('gui', default_value='True'),
         Node(
             package='motion_capture_tracking',

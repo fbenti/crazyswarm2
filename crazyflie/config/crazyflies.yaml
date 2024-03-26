@@ -5,36 +5,25 @@ robots:
     uri: radio://0/0/2M/E7E7E7E7E7
     initial_position: [0, 0, 0]
     type: cf21  # see robot_types
-    # firmware_params:
-    #   kalman:
-    #     pNAcc_xy: 1.0 # default 0.5
-    # firmware_logging:
-    #   enabled: true
-    #   custom_topics:
-    #     topic_name3: 
-    #       frequency: 1
-    #       vars: ["acc.x", "acc.y"]
+    
+  cf1:
+    enabled: false
+    uri: radio://0/0/2M/E7E7E7E701
+    initial_position: [0, 0.0, 0]
+    type: cf_flowdeck # see robot_types
+  cf5:
+    enabled: false
+    uri: radio://0/0/2M/E7E7E7E705
+    initial_position: [1, -0.1, 0]
+    type: cf_flowdeck # see robot_types
   cf8:
     enabled: true
     uri: radio://0/0/2M/E7E7E7E708
     initial_position: [0, -0.5, 0]
     type: cf_flowdeck # see robot_types
-    # firmware_params:
-    #   kalman:
-    #     pNAcc_xy: 1.0 # default 0.5
-    #firmware_logging:
-    #  custom_topics:
-    #    topic_name3: 
-    #      frequency: 1
-    #      vars: ["acc.x", "acc.y", "acc.z"]
-  cf1:
+  cf13:
     enabled: false
-    uri: radio://0/0/2M/E7E7E7E701
-    initial_position: [1, -0.5, 0]
-    type: cf_flowdeck # see robot_types
-  cf16:
-    enabled: false
-    uri: radio://0/0/2M/E7E7E7E710
+    uri: radio://0/0/2M/E7E7E7E70D
     initial_position: [2, -0.5, 0]
     type: cf_flowdeck # see robot_types
   cf20:
@@ -42,6 +31,7 @@ robots:
     uri: radio://0/0/2M/E7E7E7E714
     initial_position: [3, -0.5, 0]
     type: cf_flowdeck # see robot_types
+
 # Definition of the various robot types
 robot_types:
   cf_flowdeck:
@@ -103,7 +93,7 @@ all:
   # firmware logging for all drones (use robot_types/type_name to set per type, or
   # robots/drone_name to set per drone)
   firmware_logging:
-    enabled: true
+    enabled: false
     default_topics:
      # remove to disable default topic
       pose:

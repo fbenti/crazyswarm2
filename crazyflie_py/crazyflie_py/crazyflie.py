@@ -738,7 +738,6 @@ class CrazyflieServer(rclpy.node.Node):
             FullState, 'all/cmd_full_state', 1)
         self.cmdFullStateMsg = FullState()
         self.cmdFullStateMsg.header.frame_id = '/world'
-
         cfnames = []
         for srv_name, srv_types in self.get_service_names_and_types():
             if 'crazyflie_interfaces/srv/StartTrajectory' in srv_types:
